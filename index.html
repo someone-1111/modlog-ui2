@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logs Moderación r/chile</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dark-mode">
+    <div class="header-bar">
+        <h1>Logs Moderación r/chile</h1>
+    </div>
+    <ul>
+        <div>
+            <label for="accion">Acción:</label>
+            <select id="accion">
+                <option value="">Todas</option>
+            </select>
+            <label for="autor">Usuario:</label>
+            <input type="text" id="autor" placeholder="Buscar por usuario" />
+            <label for="moderador">Moderador:</label>
+            <input type="text" id="moderador" placeholder="Buscar por moderador">
+            <button id="btnBuscar">Buscar</button>
+            <label>
+                <input type="checkbox" id="ignorarModsCheckbox">
+                Ignorar mod bots
+                <span class="tooltip">
+                    <span style="color: #007bff;">&#9432;</span>
+                    <span class="tooltiptext">
+                        Ignora los mods "AutoModerator",
+                        "EmpleadoEstatalBot" y "floodassistant".
+                    </span>
+                </span>
+            </label>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+            <button id="btnReset" style="margin-bottom:1rem;">Resetear</button>
+            <button id="toggleExpandAll" style="margin-bottom:1rem;">Mostrar todos los detalles</button>
+        </div>
+    </ul>
+
+
+    <div id="errorMsg" style="color: red; display: none;"></div>
+
+    <table id="tablaLogs">
+        <thead>
+            <tr>
+                <th colspan="2">Acción</th>
+                <th rowspan="2">Usuario</th>
+                <th rowspan="2">Moderador</th>
+                <th rowspan="2">Fecha</th>
+                <th rowspan="2">Mas</th>
+                <th rowspan="2">Enlace</th>
+            </tr>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="loader">Cargando más resultados...</div>
+    <div id="endMessage" style="display:none; text-align:center; padding:1rem; color:#777;">
+        No hay más resultados
+    </div>
+
+
+    <div id="sentinela" style="height: 1px;"></div>
+    <button id="botonForzar">Forzar carga</button>
+
+
+
+
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
