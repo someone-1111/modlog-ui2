@@ -554,7 +554,10 @@ function generarDetalleExpandidoSeguro(item) {
     div2.innerHTML = safeHtml;
     container.appendChild(div2);
     // --- Agrega el botón especial ---
-    if (item.mod === "Anti-Evil Operations") {
+    if (
+      item.mod === "Anti-Evil Operations" ||
+      item.mod === "Reddit Legal"
+    ) {
       let id1 = null;
       let match1 = null;
       if (item.action === "removecomment"){
